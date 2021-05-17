@@ -1,0 +1,72 @@
+{
+    "frameworks":["fission", "openfaas", "kubeless"],
+    "tests":[
+        {
+            "name":"Cold start",
+            "frameworks":["openfaas","fission"],
+            "type":"coldstart",
+            "functions":[
+                {
+                    "name":"sleep",
+                    "start":100,
+                    "jump":100,
+                    "end":100
+                }
+            ],
+            "iterations":1         
+        },
+        {
+            "name":"Increassing clients and replications",
+            "frameworks":["openfaas","fission","kubeless"],
+            "type":"increasingClient",
+            "functions":[
+                {
+                    "name":"vector",
+                    "clients": [1,10,20,30,40,50],
+                    "d": 250000
+                }
+            ],
+            "iterations":1,
+            "replications": [10,20,30,40,50],
+            "q":50,
+            "n":1000       
+        },
+        {
+            "name":"coldstart test 1 to 2 functions",
+            "frameworks":["openfaas","fission","kubeless"],
+            "type":"coldstartload",
+            "functions":[
+                {
+                    "name":"sleep",
+                    "start":5,
+                    "jump":5,
+                    "end":5  
+                }
+            ],
+            "iterations":1,
+            "q":10,
+            "c":1,
+            "n":2000      
+        },
+        {
+            "name":"Increasing the workload",
+            "frameworks":["fission","kubeless", "openfaas"],
+            "type":"increasingWorkload",
+            "functions":[
+                {
+                    "name":"vector",
+                    "d": [4096,8192,16384,32768,65536,131072,262144,524288,1048576]
+                },
+                {
+                    "name":"matrix",
+                    "d": [100,200,300,400,500,600,700,800,900,1000]
+                }
+            ],
+            "n":100       
+        },
+        {
+            "name":"Empty"         
+        }
+    ]
+}
+

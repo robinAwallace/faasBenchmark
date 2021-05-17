@@ -1,0 +1,22 @@
+Steps to test frameworks
+
+Set up kubernetes (minikube/gke)
+I guess gke requires some more setup then minikube to run
+
+install prometheus and grafana
+
+for each framework
+    Install framework
+    Setup so prometheus can scrape the pods
+
+    for each test function (repet x times?)
+        run load generator (hey) (retrive call duration, cold start)
+        notate down start and stop time 
+
+    export (cpu, memory, number of pods (see autoscaling)) from grafana csv data files
+
+    plot in matlab and save to figure
+    use start and stop time to extract correct utilization from csv file
+
+
+https://medium.com/the-metricfire-blog/monitoring-kubernetes-tutorial-using-grafana-and-prometheus-f106091534fb

@@ -1,0 +1,22 @@
+{
+    "frameworks":["kubeless"],
+    "tests":[
+        {
+            "name":"Increasing the workload",
+            "frameworks":["fission","kubeless", "openfaas"],
+            "type":"increasingWorkload",
+            "functions":[
+                {
+                    "name":"vector",
+                    "d": [4096,8192,16384,32768,65536,131072,262144,524288,1048576]
+                },
+                {
+                    "name":"matrix",
+                    "d": [100,200,300,400,500,600,700,800,900,1000]
+                }
+            ],
+            "n":100       
+        }
+    ]
+}
+

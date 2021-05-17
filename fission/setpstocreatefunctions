@@ -1,0 +1,8 @@
+1. Create a folder for the function code
+
+2. Write the function and package the code into a zip
+
+3. Deploy an enviroment in the framework to build the function from the zip
+
+4. deploy function
+

@@ -1,0 +1,22 @@
+{
+    "frameworks":["openfaas","kubeless"],
+    "tests":[
+        {
+            "name":"Increasing clients and replications",
+            "frameworks":["fission","kubeless", "openfaas"],
+            "type":"increasingClient",
+            "functions":[
+                {
+                    "name":"vector",
+                    "clients": [1,5,10,50,100],
+                    "d": 25000
+                }
+            ],
+            "iterations":1,
+            "replications": [1, 5, 10, 50],
+            "q":10,
+            "n":1000       
+        }
+    ]
+}
+

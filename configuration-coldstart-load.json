@@ -1,0 +1,21 @@
+{
+    "frameworks":["openfaas", "fission"],
+    "tests":[
+        {
+            "name":"coldstart test 1 to 2 functions",
+            "frameworks":["openfaas","fission","kubeless"],
+            "type":"coldstartload",
+            "functions":[
+                {
+                    "name":"sleep",
+                    "start":100,
+                    "jump":100,
+                    "end":100
+                }
+                
+            ],
+            "iterations":1     
+        }
+    ]
+}
+

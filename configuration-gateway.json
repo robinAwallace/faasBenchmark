@@ -1,0 +1,24 @@
+{
+    "frameworks":["kubeless"],
+    "startNodes": 9,
+    "tests":[
+        {
+            "name":"Increasing gateway",
+            "frameworks":["kubeless","openfaas"],
+            "type":"increasingGateway",
+            "functions":[
+                {
+                    "name":"vector",
+                    "d": 25000
+                }
+            ],
+            "iterations":1,
+            "clients": [100,1000],
+            "replications": [100],
+            "gateways": [50],
+            "q":10,
+            "n":10000          
+        }
+    ]
+}
+

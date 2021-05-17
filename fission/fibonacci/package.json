@@ -1,0 +1,8 @@
+{
+  "name": "fibonacci",
+  "engines": {
+    "node": ">=7.6.0"
+  },
+  "dependencies": {
+  }
+}

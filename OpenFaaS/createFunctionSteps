@@ -1,0 +1,10 @@
+1. Start with creating a folder using the following command:
+faas-cli new sleep --lang node12
+
+2. Write the function
+
+3. Build the function to a docker file using the cli tool
+faas-cli build --filter "sleep" -f openFaaSFunctions.yml
+
+4. Push the function to a docker repository with the cli tool. Be sure to be logged in to the docker cli tool.
+faas-cli push --filter "sleep" -f openFaaSFunctions.yml

@@ -1,0 +1,24 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://192.168.49.2:31112
+functions:
+  sleep:
+    lang: node12
+    handler: ./OpenFaaS/sleep
+    image: aniciuswallace/sleep:latest
+  fibonacci:
+    lang: node12
+    handler: ./OpenFaaS/fibonacci
+    image: aniciuswallace/fibonacci:latest
+  matrix:
+    lang: node12
+    handler: ./OpenFaaS/matrix
+    image: aniciuswallace/matrix:latest
+  vector:
+    lang: node12
+    handler: ./OpenFaaS/vector
+    image: aniciuswallace/vector:latest
+configuration:
+  copy:
+    - ./code

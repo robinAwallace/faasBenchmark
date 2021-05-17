@@ -1,0 +1,21 @@
+{
+    "frameworks":["openfaas","fission"],
+    "startNodes": 3,
+    "tests":[
+        {
+            "name":"Cold start",
+            "frameworks":["openfaas","fission"],
+            "type":"coldstart",
+            "functions":[
+                {
+                    "name":"sleep",
+                    "start":100,
+                    "jump":100,
+                    "end":100
+                }
+            ],
+            "iterations":100         
+        }
+    ]
+}
+
