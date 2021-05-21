@@ -571,7 +571,6 @@ jq -c -r '.frameworks[]' $CONFIG | while read i; do
     clean_$i
     
     zip $outputFolder.zip -r $outputFolder
-    echo "" | mail -s "$i $outputFolder" -A $outputFolder.zip aniciuswallace@gmail.com
 done
 
 #if $MINIKUBE; then
